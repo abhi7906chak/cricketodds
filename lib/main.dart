@@ -1,3 +1,8 @@
+// @autor Abhishek Kumar Chak
+// Completion data 01/16/2025
+// time 2:10pm
+// Purpose :- Assignment for linkedin Flutter Developer Post
+
 // import 'package:fl_chart/fl_chart.dart';
 import 'package:cricketodds/view%20model/data_fatching_method/get_data.dart';
 import 'package:cricketodds/view/cricketodds_Home.dart';
