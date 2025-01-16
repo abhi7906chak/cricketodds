@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-// ignore_for_file: library_private_types_in_public_api, file_names
-
 import 'package:cricketodds/widgets/all_team_score_card.dart';
 import 'package:cricketodds/widgets/live_score_widget.dart';
 import 'package:cricketodds/widgets/odds_trend_chart.dart';
@@ -25,26 +22,32 @@ class _CricketOddsHomeState extends State<CricketOddsHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BBL Live Cricket Odds'),
+        title: const Text('BBL Live Cricket Odds'),
         actions: [
           IconButton(
-              icon:
-                  Icon(widget.isDarkTheme ? Icons.light_mode : Icons.dark_mode),
-              onPressed: widget.toggleTheme)
+            icon: Icon(widget.isDarkTheme ? Icons.light_mode : Icons.dark_mode),
+            onPressed: widget.toggleTheme,
+          ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            LiveScoreWidget(),
-            SizedBox(height: 16),
-            TradingValuesWidget(),
-            AllTeamScoreCard(),
-            SizedBox(height: 16),
-            Expanded(child: OddsTrendChart()),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              LiveScoreWidget(),
+              const SizedBox(height: 16),
+              TradingValuesWidget(),
+              AllTeamScoreCard(),
+              const SizedBox(height: 16),
+              SizedBox(
+                height:
+                    300, 
+                child: OddsTrendChart(),
+              ),
+            ],
+          ),
         ),
       ),
     );
